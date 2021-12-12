@@ -12,6 +12,7 @@
     "compile": "electron-builder build --config electron-builder.config.js --dir --config.asar=false",
     "pretest": "npm run build",
     "test": "node tests/app.spec.js",
+    "start": "node scripts/watch.js",
     "dev": "node scripts/watch.js",
     "lint": "eslint . --ext js,ts,tsx",
     "typecheck-main": "tsc --noEmit -p packages/main/tsconfig.json",

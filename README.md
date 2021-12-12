@@ -1,30 +1,23 @@
-# Electron App boilerplate
-A simple boilerplate to create Electron powered apps. This project is based on https://github.com/cawa-93/vite-electron-builder
-
-## Features
-- Electron
-- React
-- Typescript
-- SASS
-- Built-in Settings management through config.properties file
-- Built-in Theme support.
-- Built-in i18n support.
+# Material Color Tool
+This desktop application allows you to easily select a primary / secondary color scheme from the Material Design color palette.
+It also allows you to preview selected colors on a test screen.
+The application was tested under Windows and Linux, and although it has not been tested on Mac yet, it may also work correctly.
 
 ## Development
 ### Execution
 To run the application in development mode, use the following command:
 ```sh
-npm run dev
+yarn dev
 ```
 
 ## Production
 ### Build (fast)
 ```
-npm run compile
+yarn compile
 ```
 If the project builds successfully, you will find the corresponding executable in the *dist* directory.
 
 ### Build (production-optimized)
 ```
-npm run build
+yarn build
 ```
