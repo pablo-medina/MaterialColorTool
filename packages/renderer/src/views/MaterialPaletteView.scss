@@ -1,0 +1,90 @@
+.material-palette-view {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    height: auto;
+    overflow-y: auto;
+
+    @media only screen and (min-width: 750px) {
+        flex-direction: row;
+    }
+
+    .container {
+        margin: 0.15rem;
+        padding: 0.15rem;
+    }
+
+    .color-pickers-container {
+        display: flex;
+        flex-direction: column;
+
+        .color-picker-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 43vh;
+            border: 1px solid var(--container-border);
+            border-radius: var(--container-border-radius);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            margin: 0.25rem 0;
+            color: var(--container-fg);
+            background-color: var(--container-bg);
+            h1 {
+                font-size: 0.9rem;
+                font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+                font-weight: 600;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    .preview-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: center;
+        overflow-x: auto;
+        overflow-y: auto;
+        width: 100%;
+        zoom: 1;
+
+        .virtual-screen {
+            zoom: 0.5;
+        }
+
+        @media only screen and (min-width: 180px) {
+            .virtual-screen {
+                zoom: 0.75;
+            }
+        }
+
+        @media only screen and (min-width: 275px) {
+            .virtual-screen {
+                zoom: 1;
+            }
+        }
+
+        @media only screen and (min-width: 570px) {
+            flex-direction: row;
+        }
+
+        @media only screen and (min-width: 750px) {
+            flex-direction: column;
+            zoom: 1;
+        }
+
+        @media only screen and (min-width: 980px) {
+            flex-direction: row;
+            zoom: 1;
+        }
+
+        .virtual-screen {
+            margin: 0.25rem;
+            flex: 0 1 auto;
+            align-self: auto;
+        }
+    }
+}

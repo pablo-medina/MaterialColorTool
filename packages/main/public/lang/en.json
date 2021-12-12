@@ -3,7 +3,6 @@
     "navbar.config.title": "Config",
     "navbar.about.title": "About",
     "view.home.title": "Home View",
-    "view.about.title": "About View",
     "view.config.theme": "Theme",
     "view.config.language": "Language",
     "view.config.apply": "Apply",

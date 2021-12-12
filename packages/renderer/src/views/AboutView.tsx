@@ -1,11 +1,10 @@
 import React from 'react'
-import { useTranslator } from '../hooks/useTranslator'
 
 const AboutView: React.FC = () => {
-    const {t} = useTranslator()
     return (
         <div className="view about-view">
-            {t('view.about.title')}
+            <h1>Material Color Tool</h1>
+            <p>(C) 2021 - Pablo Medina</p>
         </div>
     )
 }

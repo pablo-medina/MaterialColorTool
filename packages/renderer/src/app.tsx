@@ -26,7 +26,7 @@ interface AppProps {
 const App: React.FC<AppProps> = props => {
     const { t } = useTranslator()
     const { themeClass } = useTheme()
-    const titleBar = <TitleBar title="Electron App" />
+    const titleBar = <TitleBar title="Material Color Tool" />
 
     return (
         <Router>

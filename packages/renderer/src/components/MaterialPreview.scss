@@ -1,0 +1,106 @@
+.material-preview {
+    --vs-width: 256px;
+    --vs-height: 384px;
+    --vs-titlebar-height: 80px;
+    --vs-titlebar-dark-height: 24px;
+    --vs-tabbar-height: 32px;
+    --vs-fab-size: 48px;
+    --vs-fab-margin: 16px;
+
+    .virtual-screen {
+        width: var(--vs-width);
+        border: 1px solid var(--container-border);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        font-size: 1rem;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: 0.0075em;
+
+        .title-bar-container {
+            display: block;
+            margin: 0;
+            padding: 0;
+            box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
+                0px 1px 18px 0px rgb(0 0 0 / 12%);
+            .title-bar-dark {
+                height: var(--vs-titlebar-dark-height);
+            }
+            .title-bar {
+                height: calc(var(--vs-titlebar-height) - var(--vs-titlebar-dark-height));
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                cursor: default;
+
+                .menu {
+                    margin: 0;
+                    padding: 0 16px;
+                    
+                }
+                .title {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+        .tabs-container {
+            position: relative;
+            display: flex;
+            height: var(--vs-tabbar-height);
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 500;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            cursor: default;
+            .tab {
+                margin: 0.5rem 0 0 0;
+                padding: 0 1rem;
+            }
+        }
+        .content-container {
+            position: relative;
+            display: block;
+            .content {
+                position: relative;
+                display: block;
+                height: calc(var(--vs-height) - var(--vs-titlebar-height) - var(--vs-tabbar-height));
+            }
+            .fab {
+                position: absolute;
+                right: var(--vs-fab-margin);
+                bottom: var(--vs-fab-margin);
+                font-size: 20pt;
+                z-index: 1;
+                border: none;
+                width: var(--vs-fab-size);
+                height: var(--vs-fab-size);
+                text-align: center;
+                font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+                font-weight: 500;
+                line-height: 1.75;
+                border-radius: 50%;
+                letter-spacing: 0.02857em;
+                text-transform: uppercase;
+                box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
+                    0px 1px 18px 0px rgb(0 0 0 / 12%);
+                transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            }
+            .fab:hover {
+                box-shadow: 0 6px 14px 0 #666;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .virtual-screen.vs-theme-light {
+        background-color: #f0f0f0;
+    }
+
+    .virtual-screen.vs-theme-dark {
+        background-color: #263238;
+    }
+}
