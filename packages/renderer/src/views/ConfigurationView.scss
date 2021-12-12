@@ -1,0 +1,26 @@
+.view.configuration-view {
+    .options {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .option {
+            display: flex;
+            flex-direction: row;
+            
+            .option-label {
+                padding: 0.25rem;
+                flex-basis: 4rem;
+            }
+
+            .option-component {
+                padding: 0.25rem;
+                flex-grow: 1;
+
+                .option-theme {
+                    width: auto;
+                }
+            }
+        }
+    }
+}

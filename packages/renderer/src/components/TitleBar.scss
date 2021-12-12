@@ -1,0 +1,64 @@
+.titlebar {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    height: 1.75rem;
+    color: var(--color-4-text);
+    background-color: var(--color-4);
+    
+    .titlebar-decorator {
+        position: absolute;
+        z-index: 3;
+        flex-grow: 1;
+        width: 100%;
+        height: 1.75rem;
+        pointer-events: none;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 16px 16px inset;
+    }
+
+    .title {
+        flex-grow: 1;
+        text-align: center;
+        color: inherit;
+        -webkit-app-region: drag;
+        margin: auto 0;
+        z-index: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .buttons {
+        -webkit-app-region: no-drag;
+        flex-grow: 0;
+        color: inherit;
+        text-align: right;
+        margin: auto 0;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        background-color: var(--color-4);
+        .btn {
+            color: var(--color-4-text);
+            opacity: 1;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            transition: opacity 0.25s ease-out;
+        }
+        .btn:hover {
+            opacity: 1;
+            transition: opacity 0.25s ease-in;
+            background-color: rgba(2555, 255, 255, 0.25);
+        }
+        .btn:focus {
+            opacity: 1;
+            transition: opacity 0.25s ease-in;
+        }
+        .btn-close:hover {
+            color: #ffffff;
+            background-color: red;
+        }
+    }
+}
