@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslator } from "../hooks/useTranslator";
 import type { ColorValue } from "../interfaces/color";
 import MaterialPalette from "../lib/MaterialPalette";
 import './MaterialPreview.scss';
@@ -14,6 +15,7 @@ const MaterialPreview: React.FC<Props> = props => {
     const pcDef = MaterialPalette.get(primaryColor.hue, primaryColor.shade);
     const scDef = MaterialPalette.get(secondaryColor.hue, secondaryColor.shade);
     const virtualTheme = dark ? 'vs-theme-dark' : 'vs-theme-light';
+    const {t} = useTranslator();
 
     const colorToStyle = (fg: string, bg: string) => {
         return (
@@ -41,6 +43,8 @@ const MaterialPreview: React.FC<Props> = props => {
         return null;
     }
 
+    const itemText = t('preview.item');
+
     return (
         <div className="material-preview">
             <div className={`virtual-screen ${virtualTheme}`}>
@@ -50,7 +54,7 @@ const MaterialPreview: React.FC<Props> = props => {
                         <div className="menu">
                             =
                         </div>
-                        <div className="title">Title</div>
+                        <div className="title">{t('preview.title')}</div>
                     </div>
                 </div>
                 <div className="tabs-container"
@@ -60,9 +64,9 @@ const MaterialPreview: React.FC<Props> = props => {
                             backgroundColor: pcDef.color.light
                         }
                     }>
-                    {renderTab(pcDef.color.normal, 'Item 1')}
-                    {renderTab(pcDef.color.light, 'Item 2')}
-                    {renderTab(pcDef.color.light, 'Item 3')}
+                    {renderTab(pcDef.color.normal, `${itemText} 1`)}
+                    {renderTab(pcDef.color.light, `${itemText} 2`)}
+                    {renderTab(pcDef.color.light, `${itemText} 3`)}
                 </div>
                 <div className="content-container">
                     <div className="content">
