@@ -11,9 +11,9 @@ yarn dev
 ```
 
 ## Production
-### Build (fast)
+### Build (fast, not optimized for production)
 ```
-yarn compile
+yarn build:fast
 ```
 If the project builds successfully, you will find the corresponding executable in the *dist* directory.
 
