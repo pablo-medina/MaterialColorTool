@@ -11,9 +11,15 @@ yarn dev
 ```
 
 ## Production
-### Build
+### Build (executable and its dependencies)
+```
+yarn build:fast
+```
+
+### Build (with NSIS installer for Windows)
 ```
 yarn build
 ```
+
 If the project builds successfully, you will find the corresponding executable in the *dist* directory.
 
