@@ -1,5 +1,5 @@
 {
-  "name": "electron-app",
+  "name": "mct",
   "private": true,
   "engines": {
     "node": ">=v14.16",
