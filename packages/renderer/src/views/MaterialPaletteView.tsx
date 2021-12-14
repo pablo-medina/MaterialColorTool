@@ -9,7 +9,7 @@ import { useTranslator } from '../hooks/useTranslator'
 
 type PreviewTheme = 'light' | 'dark';
 
-const HomeView: React.FC = () => {
+const MaterialPaletteView: React.FC = () => {
     const [primaryColor, setPrimaryColor] = React.useState<ColorValue>({ hue: 'blue', shade: '700' });
     const [secondaryColor, setSecondaryColor] = React.useState<ColorValue>({ hue: 'pink', shade: '700' });
     const [previewTheme, setPreviewTheme] = React.useState<PreviewTheme>('light');
@@ -25,7 +25,7 @@ const HomeView: React.FC = () => {
     }
 
     return (
-        <div className="view home-view material-palette-view">
+        <div className="view material-palette-view">
             <div className="card color-picker">
                 <div className="title">
                     {t('color.primary')}
@@ -58,4 +58,4 @@ const HomeView: React.FC = () => {
     )
 }
 
-export default HomeView
+export default MaterialPaletteView
