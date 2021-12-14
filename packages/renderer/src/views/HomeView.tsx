@@ -1,38 +1,40 @@
+import type { ReactNode } from 'react';
 import React from 'react'
+import type { OnColorPickFn } from '../components/MaterialColorPicker';
 import MaterialColorPicker from '../components/MaterialColorPicker'
 import type { ColorValue } from '../interfaces/color'
 import MaterialPreview from '../components/MaterialPreview'
 import './MaterialPaletteView.scss'
 import { useTranslator } from '../hooks/useTranslator'
 
+type ColorMode = 'primary' | 'secondary';
+
 const HomeView: React.FC = () => {
     const [primaryColor, setPrimaryColor] = React.useState<ColorValue>({ hue: 'blue', shade: '700' });
     const [secondaryColor, setSecondaryColor] = React.useState<ColorValue>({ hue: 'pink', shade: '700' });
+    const [colorMode, setColorMode] = React.useState<ColorMode>('primary');
     const { t } = useTranslator();
+
+    const renderColorPicker = (colorValue: ColorValue, onColorPick: OnColorPickFn): ReactNode => {
+        return (
+            <MaterialColorPicker
+                value={{ hue: colorValue.hue, shade: colorValue.shade }}
+                onColorPick={onColorPick}
+            />
+        )
+    }
+
+    const renderedColorPicker = (colorMode === 'secondary') ? renderColorPicker(secondaryColor, setSecondaryColor) : renderColorPicker(primaryColor, setPrimaryColor);
 
     return (
         <div className="view home-view material-palette-view">
             <div className="color-pickers">
                 <div className="card">
-                    <div className="card-title">
-                        {t('color.primary')}
+                    <div className="card-title" onClick={() => setColorMode(colorMode === 'primary' ? 'secondary' : 'primary')}>
+                        {t(`color.${colorMode}`)}
                     </div>
                     <div className="card-content">
-                        <MaterialColorPicker
-                            value={{ hue: primaryColor.hue, shade: primaryColor.shade }}
-                            onColorPick={setPrimaryColor}
-                        />
-                    </div>
-                </div>
-                <div className="card">
-                    <div className="card-title">
-                        {t('color.secondary')}
-                    </div>
-                    <div className="card-content">
-                        <MaterialColorPicker
-                            value={{ hue: secondaryColor.hue, shade: secondaryColor.shade }}
-                            onColorPick={setSecondaryColor}
-                        />
+                        {renderedColorPicker}
                     </div>
                 </div>
             </div>

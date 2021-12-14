@@ -5,7 +5,7 @@ import ClassNameBuilder from "../lib/ClassNameBuilder";
 import MaterialPalette from "../lib/MaterialPalette";
 import './MaterialColorPicker.scss';
 
-type OnColorPickFn = (color: ColorValue) => void;
+export type OnColorPickFn = (color: ColorValue) => void;
 
 interface Props {
     value: ColorValue
@@ -93,11 +93,11 @@ const MaterialColorPicker: React.FC<Props> = props => {
     return (
         <div className="material-color-picker">
             <div className="color-select">
-                <div className="container panel color-hues-panel">
-                    <div className="container-title">
+                <div className="color-panel">
+                    <div className="title">
                         {t('color.hue')}
                     </div>
-                    <div className="container-body color-hues">
+                    <div className="body color-hues">
                         {
                             MaterialPalette.hues().map(hue =>
                                 renderColorHue(hue, current.shade, (current && current.hue === hue), onColorPick)
@@ -105,11 +105,11 @@ const MaterialColorPicker: React.FC<Props> = props => {
                         }
                     </div>
                 </div>
-                <div className="container panel color-shades-panel">
-                    <div className="container-title">
+                <div className="color-panel">
+                    <div className="title">
                         {t('color.shade')}
                     </div>
-                    <div className="container-body color-shades">
+                    <div className="body color-shades">
                         {
                             MaterialPalette.shades(currentHue).map(shade =>
                                 renderColorShade(currentHue, shade, (current && currentShade === shade), onColorPick)

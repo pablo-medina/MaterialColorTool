@@ -16,39 +16,25 @@
     .color-select {
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
+        align-items: flex-start;
+        flex-grow: 0;
         --sb-size: 0.25rem;
         --hue-size: 1.75rem;
 
-        @media only screen and (min-width: 664px) {
-            flex-direction: row;
-        }
+        .color-panel {
+            display: flex;
+            flex-direction: column;
+            .title {
+                
+            }
+            .body {
     
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: var(--sb-size);
+            }
         }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background-color: var(--color-2);
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background-color: var(--color-3);
-            opacity: 1;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: var(--color-4);
-            opacity: 0.9;
-        }
-
+        
         .color-hues {
-            display: block;
+            display: flex;
+            flex-direction: row;
             flex-grow: 1;
             
             .color-hue {
@@ -68,7 +54,9 @@
         }
 
         .color-shades {
-            display: block;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
             flex-grow: 1;
             
             .color-shade {
@@ -87,4 +75,26 @@
             }
         }
     }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: var(--color-2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-3);
+    opacity: 1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-4);
+    opacity: 0.9;
 }
