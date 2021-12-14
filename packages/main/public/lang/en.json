@@ -1,5 +1,5 @@
 {
-    "navbar.home.title": "Home",
+    "navbar.palette.title": "Palette",
     "navbar.config.title": "Config",
     "navbar.about.title": "About",
     "view.home.title": "Home View",
@@ -8,6 +8,8 @@
     "view.config.apply": "Apply",
     "color.primary": "Primary",
     "color.secondary": "Secondary",
+    "preview.theme.light": "Light Theme",
+    "preview.theme.dark": "Dark Theme",
     "color.hue": "Hue",
     "color.shade": "Shade",
     "preview.title": "Title",

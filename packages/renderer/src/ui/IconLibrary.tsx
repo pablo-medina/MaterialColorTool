@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faCog, faInfo, faWindowMaximize, faWindowMinimize, faWindowRestore, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faPalette, faCog, faInfo, faWindowMaximize, faWindowMinimize, faWindowRestore, faTimes } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export enum IconResource {
-    Home,
+    Palette,
     Configuration,
     About,
     WindowMaximize,
@@ -20,7 +20,7 @@ class IconLibrary {
     private iconResources = new Map<IconResource, IconElement>()
 
     constructor() {
-        this.addIcon(IconResource.Home, this.renderFontAwesomeIcon(faHome))
+        this.addIcon(IconResource.Palette, this.renderFontAwesomeIcon(faPalette))
         this.addIcon(IconResource.Configuration, this.renderFontAwesomeIcon(faCog))
         this.addIcon(IconResource.About, this.renderFontAwesomeIcon(faInfo))
         this.addIcon(IconResource.WindowMaximize, this.renderFontAwesomeIcon(faWindowMaximize))

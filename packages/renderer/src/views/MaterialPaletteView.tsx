@@ -7,12 +7,12 @@ import MaterialPreview from '../components/MaterialPreview'
 import './MaterialPaletteView.scss'
 import { useTranslator } from '../hooks/useTranslator'
 
-type ColorMode = 'primary' | 'secondary';
+type PreviewTheme = 'light' | 'dark';
 
 const HomeView: React.FC = () => {
     const [primaryColor, setPrimaryColor] = React.useState<ColorValue>({ hue: 'blue', shade: '700' });
     const [secondaryColor, setSecondaryColor] = React.useState<ColorValue>({ hue: 'pink', shade: '700' });
-    const [colorMode, setColorMode] = React.useState<ColorMode>('primary');
+    const [previewTheme, setPreviewTheme] = React.useState<PreviewTheme>('light');
     const { t } = useTranslator();
 
     const renderColorPicker = (colorValue: ColorValue, onColorPick: OnColorPickFn): ReactNode => {
@@ -24,29 +24,35 @@ const HomeView: React.FC = () => {
         )
     }
 
-    const renderedColorPicker = (colorMode === 'secondary') ? renderColorPicker(secondaryColor, setSecondaryColor) : renderColorPicker(primaryColor, setPrimaryColor);
-
     return (
         <div className="view home-view material-palette-view">
             <div className="card color-picker">
-                <div className="title" onClick={() => setColorMode(colorMode === 'primary' ? 'secondary' : 'primary')}>
-                    {t(`color.${colorMode}`)}
+                <div className="title">
+                    {t('color.primary')}
                 </div>
                 <div className="body">
-                    {renderedColorPicker}
+                    {renderColorPicker(primaryColor, setPrimaryColor)}
                 </div>
             </div>
-            <div className="preview">
-                <MaterialPreview
-                    primaryColor={primaryColor}
-                    secondaryColor={secondaryColor}
-                    dark={false}
-                />
-                <MaterialPreview
-                    primaryColor={primaryColor}
-                    secondaryColor={secondaryColor}
-                    dark={true}
-                />
+            <div className="card color-picker">
+                <div className="title">
+                    {t('color.secondary')}
+                </div>
+                <div className="body">
+                    {renderColorPicker(secondaryColor, setSecondaryColor)}
+                </div>
+            </div>
+            <div className="card preview">
+                <div className="title" onClick={() => setPreviewTheme(previewTheme === 'light' ? 'dark' : 'light')}>
+                    {t(`preview.theme.${previewTheme}`)}
+                </div>
+                <div className="body">
+                    <MaterialPreview
+                        primaryColor={primaryColor}
+                        secondaryColor={secondaryColor}
+                        dark={previewTheme === 'dark'}
+                    />
+                </div>
             </div>
         </div>
     )

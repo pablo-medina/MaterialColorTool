@@ -8,23 +8,21 @@
     --vs-fab-margin: 16px;
 
     .virtual-screen {
-        width: var(--vs-width);
-        border: 1px solid var(--container-border);
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        width: var(--vs-width);        
         font-size: 1rem;
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
         font-weight: 500;
         line-height: 1.6;
         letter-spacing: 0.0075em;
-
+        margin: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        
         .title-bar-container {
             display: block;
             margin: 0;
             padding: 0;
-            box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
-                0px 1px 18px 0px rgb(0 0 0 / 12%);
             .title-bar-dark {
-                height: var(--vs-titlebar-dark-height);
+                height: var(--vs-titlebar-dark-height);                
             }
             .title-bar {
                 height: calc(var(--vs-titlebar-height) - var(--vs-titlebar-dark-height));

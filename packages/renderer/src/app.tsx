@@ -3,7 +3,7 @@ import './app.scss'
 import { Navbar, NavbarItem } from './components/navbar'
 import AboutView from './views/AboutView'
 import ConfigurationView from './views/ConfigurationView'
-import HomeView from './views/HomeView'
+import MaterialPaletteView from './views/MaterialPaletteView'
 import { IconResource } from './ui/IconLibrary'
 import {
     HashRouter as Router,
@@ -36,10 +36,10 @@ const App: React.FC<AppProps> = props => {
                     <Navbar className={`navbar-${props.navbar.location}`}
                         showLabels={props.navbar.showLabels}>
                         <NavbarItem
-                            name="home"
-                            label={t('navbar.home.title')}
-                            route="/home"
-                            icon={IconResource.Home} />
+                            name="palette"
+                            label={t('navbar.palette.title')}
+                            route="/palette"
+                            icon={IconResource.Palette} />
                         <NavbarItem
                             name="config"
                             label={t('navbar.config.title')}
@@ -60,7 +60,7 @@ const App: React.FC<AppProps> = props => {
                                 <ConfigurationView />
                             </Route>
                             <Route path="/">
-                                <HomeView />
+                                <MaterialPaletteView />
                             </Route>
                         </Switch>
                     </div>
