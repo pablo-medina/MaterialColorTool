@@ -28,14 +28,12 @@ const HomeView: React.FC = () => {
 
     return (
         <div className="view home-view material-palette-view">
-            <div className="color-pickers">
-                <div className="card">
-                    <div className="card-title" onClick={() => setColorMode(colorMode === 'primary' ? 'secondary' : 'primary')}>
-                        {t(`color.${colorMode}`)}
-                    </div>
-                    <div className="card-content">
-                        {renderedColorPicker}
-                    </div>
+            <div className="card color-picker">
+                <div className="title" onClick={() => setColorMode(colorMode === 'primary' ? 'secondary' : 'primary')}>
+                    {t(`color.${colorMode}`)}
+                </div>
+                <div className="body">
+                    {renderedColorPicker}
                 </div>
             </div>
             <div className="preview">

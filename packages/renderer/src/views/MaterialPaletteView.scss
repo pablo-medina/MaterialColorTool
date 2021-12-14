@@ -1,13 +1,7 @@
 .material-palette-view {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     overflow-y: auto;
-
-    .color-pickers {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
 
     .preview {
         display: flex;

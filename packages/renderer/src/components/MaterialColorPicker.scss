@@ -15,7 +15,7 @@
 
     .color-select {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         flex-grow: 0;
         --sb-size: 0.25rem;
@@ -24,54 +24,29 @@
         .color-panel {
             display: flex;
             flex-direction: column;
-            .title {
-                
-            }
-            .body {
-    
-            }
-        }
-        
-        .color-hues {
-            display: flex;
-            flex-direction: row;
             flex-grow: 1;
-            
-            .color-hue {
-                display: inline-block;
-                width: var(--hue-size);
-                height: var(--hue-size);
-                border: 1px solid transparent;
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            }
-            .color-hue:focus {
-                outline: none;
-                box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.85) inset, 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            }
-            .color-hue.active {
-                box-shadow: 0 0 2px 4px rgba(224, 224, 255, 0.65) inset, 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            }
-        }
 
-        .color-shades {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            flex-grow: 1;
-            
-            .color-shade {
+            .color-button {
                 display: inline-block;
                 width: var(--hue-size);
                 height: var(--hue-size);
                 border: 1px solid transparent;
+                border-radius: 1rem;
+                margin: 0.25rem;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                transition: border-radius 0.25s ease-in, background-color 0.25s ease-in-out;
             }
-            .color-shade:focus {
+            .color-button:focus {
                 outline: none;
-                box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.85) inset, 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.85) inset, 0 3px 6px rgba(0, 0, 0, 0.16),
+                    0 3px 6px rgba(0, 0, 0, 0.23);
+                transition: border-radius 0.25s ease-in;
             }
-            .color-shade.active {
-                box-shadow: 0 0 2px 4px rgba(224, 224, 255, 0.65) inset, 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            .color-button.active {
+                border-radius: 0.25rem;
+                box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.85) inset, 0 3px 6px rgba(0, 0, 0, 0.16),
+                    0 3px 6px rgba(0, 0, 0, 0.23);
+                transition: border-radius 0.25s ease-out;
             }
         }
     }
