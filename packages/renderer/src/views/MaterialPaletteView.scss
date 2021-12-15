@@ -1,8 +1,18 @@
 .material-palette-view {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     overflow-y: auto;
     align-content: flex-start;
+
+    .color-picker {
+        .panels {
+            display: flex;
+            flex-direction: row;            
+            .panel {
+                overflow-y: auto;
+            }
+        }
+    }
 
     .preview {
         display: flex;
@@ -10,18 +20,17 @@
         align-items: center;
         flex-grow: 1;
         padding-top: 0.25rem;
-
-        .title {
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: color 0.25s ease-out, background-color 0.25s ease-out;
-        }
-        .title:hover {
-            color: var(--color-4-text);
-            background-color: var(--color-4);
-            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-            transition: color 0.25 ease-in, background-color 0.25s ease-in;
-        }
     }
+}
+
+.layout-h {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.layout-v {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
