@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import React from "react";
+import { useTranslator } from "../hooks/useTranslator";
 import type { ColorValue } from "../interfaces/color";
 import MaterialPalette from "../lib/MaterialPalette";
 import './MaterialColorViewer.scss';
@@ -29,6 +30,7 @@ const renderColor = (title: string, color: string): ReactNode => {
 
 const MaterialColorViewer: React.FC<Props> = props => {
     const current = props.value;
+    const {t} = useTranslator();
     const mc = MaterialPalette.get(current.hue, current.shade);
     if (!mc) {
         return null;
@@ -38,22 +40,22 @@ const MaterialColorViewer: React.FC<Props> = props => {
         <div className="material-color-viewer">
             <div className="section">
                 <div className="title">
-                    Color
+                    {t('color.viewer.bg')}
                 </div>
                 <div className="body">
-                    {renderColor('Normal', mc.color.normal)}
-                    {renderColor('Light', mc.color.light)}
-                    {renderColor('Dark', mc.color.dark)}
+                    {renderColor(t('color.viewer.normal'), mc.color.normal)}
+                    {renderColor(t('color.viewer.light'), mc.color.light)}
+                    {renderColor(t('color.viewer.dark'), mc.color.dark)}
                 </div>
             </div>
             <div className="section">
                 <div className="title">
-                    Text
+                    {t('color.viewer.fg')}
                 </div>
                 <div className="body">
-                    {renderColor('Normal', mc.text.normal)}
-                    {renderColor('Light', mc.text.light)}
-                    {renderColor('Dark', mc.text.dark)}
+                    {renderColor(t('color.viewer.normal'), mc.text.normal)}
+                    {renderColor(t('color.viewer.light'), mc.text.light)}
+                    {renderColor(t('color.viewer.dark'), mc.text.dark)}
                 </div>
             </div>
         </div>
