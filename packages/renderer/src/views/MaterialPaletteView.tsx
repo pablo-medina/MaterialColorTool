@@ -47,12 +47,12 @@ const MaterialPaletteView: React.FC = () => {
                     </div>
                     <div className="layout-h">
                         <div className="card color-picker">
-                            <div className="body">
+                            <div className="body vertical-scroll">
                                 {renderColorPicker(currentColor, setCurrentColor)}
                             </div>
                         </div>
                         <div className="card">
-                            <div className="body">
+                            <div className="body vertical-scroll">
                                 {renderColorViewer(currentColor)}
                             </div>
                         </div>
@@ -62,7 +62,7 @@ const MaterialPaletteView: React.FC = () => {
                     <div className="clickable" onClick={() => setPreviewTheme(previewTheme === 'light' ? 'dark' : 'light')}>
                         {t(`preview.theme.${previewTheme}`)}
                     </div>
-                    <div className="body">
+                    <div className="body vertical-scroll">
                         <MaterialPreview
                             primaryColor={primaryColor}
                             secondaryColor={secondaryColor}
