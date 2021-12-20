@@ -1,7 +1,6 @@
 # Material Color Tool
-This desktop application allows you to easily select a primary / secondary color scheme from the Material Design color palette.
-It also allows you to preview selected colors on a test screen.
-The application was tested under Windows and Linux, and although it has not been tested on Mac yet, it may also work correctly.
+This desktop application allows you to select a primary / secondary color scheme from the Material Design color palette with a little preview screen to show the final results.
+The application was tested under Windows and Linux, and although it has not been tested on Mac yet, it may also work.
 
 ## Development
 ### Execution
